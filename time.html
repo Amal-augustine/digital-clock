@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="black">
+    <div id="main" >
+        <div id="output" style="margin-top: 200px; height: 100px;font-size:150px ;font-weight:bolder ; text-align: center; color: blue;">H:S:M</div>
+    </div>
+</body>
+<script>
+    const getDateTime=()=>{
+        const localtime=new Date()
+        console.log(localtime);
+        let hours=localtime.getHours()
+        let minute=localtime.getMinutes()
+        let second=localtime.getSeconds()
+        let session="AM"
+        if(hours>12){
+            hours=hours-12
+            session="PM"
+        }
+        output.innerHTML=`${hours}:${minute}:<span style=color:white>${second}</span>:${session}`
+
+setTimeout(() => {
+    getDateTime()},1000);
+    }
+    getDateTime()
+</script>
+</html>
